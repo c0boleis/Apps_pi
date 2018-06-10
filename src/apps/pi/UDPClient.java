@@ -28,26 +28,26 @@ public class UDPClient implements Runnable{
 
 			try {
 
-				//On initialise la connexion côté client
+				//On initialise la connexion cï¿½tï¿½ client
 				DatagramSocket client = new DatagramSocket();
 
-				//On crée notre datagramme
-				InetAddress adresse = InetAddress.getByName("192.169.0.26");
+				//On crï¿½e notre datagramme
+				InetAddress adresse = InetAddress.getByName("192.168.0.26");
 				DatagramPacket packet = new DatagramPacket(buffer, buffer.length, adresse, port);
 
 
-				//On lui affecte les données à envoyer
+				//On lui affecte les donnï¿½es ï¿½ envoyer
 				packet.setData(buffer);
 
 				//On envoie au serveur
 				client.send(packet);
 
-//				//Et on récupère la réponse du serveur
+//				//Et on rï¿½cupï¿½re la rï¿½ponse du serveur
 //				byte[] buffer2 = new byte[8196];
 //				DatagramPacket packet2 = new DatagramPacket(buffer2, buffer2.length, adresse, port);
 //
 //				client.receive(packet2);
-//				print(envoi + " a reçu une réponse du serveur : ");
+//				print(envoi + " a reï¿½u une rï¿½ponse du serveur : ");
 //				println(new String(packet2.getData()));
 
 
